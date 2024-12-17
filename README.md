@@ -22,6 +22,4 @@ Demo project to build a entity scraper using [AWS Step Functions](https://aws.am
 
 ## Sample output
 
-![Output visualized](./OutputVisualized.png)
-
-See json files in [sample-output](./sample-output/) ordered by index for `StateInput` and `StateOutput` at each step.
+See [sample-output](./sample-output/README.md) for ordered by index for `StateInput` and `StateOutput` at each step.
