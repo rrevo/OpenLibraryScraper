@@ -1,0 +1,11 @@
+{
+  "StateInput": {
+    "item": {
+      "isbn": "9780261103832",
+      "title": "The \"Lord of the Rings\" Sketchbook"
+    }
+  },
+  "StateOutput": {
+    "nextItems": []
+  }
+}

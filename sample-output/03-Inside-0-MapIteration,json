@@ -1,0 +1,18 @@
+{
+  "StateInput": {
+    "page": 1
+  },
+  "StateOutput": {
+    "nextPage": 2,
+    "nextItems": [
+      {
+        "isbn": "9780820463964",
+        "title": "Watching the Lord of the rings"
+      },
+      {
+        "isbn": "9780261103832",
+        "title": "The \"Lord of the Rings\" Sketchbook"
+      }
+    ]
+  }
+}

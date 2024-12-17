@@ -1,0 +1,22 @@
+{
+  "StateInput": {
+    "nextAction": "FETCH",
+    "fetchItems": [
+      {
+        "page": 2
+      },
+      {},
+      {}
+    ]
+  },
+  "StateOutput": {
+    "nextAction": "FETCH",
+    "fetchItems": [
+      {
+        "page": 2
+      },
+      {},
+      {}
+    ]
+  }
+}

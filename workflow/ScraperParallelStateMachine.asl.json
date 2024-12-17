@@ -6,10 +6,12 @@
     "Bootstrap": {
       "Type": "Task",
       "Resource": "arn:aws:states:::lambda:invoke",
-      "Output": "{% $states.result.Payload %}",
+      "Output": "{% $states.result.Payload.body %}",
       "Arguments": {
-        "FunctionName": "arn:aws:lambda:us-east-1:XXXXX:function:Scraper:$LATEST",
-        "Payload": "{% $states.input %}"
+        "FunctionName": "arn:aws:lambda:us-east-1:XXXXXXXXXXX:function:OpenLibraryFetcher:$LATEST",
+        "Payload": {
+          "page": 0
+        }
       },
       "Retry": [
         {
@@ -30,8 +32,9 @@
     "Decider": {
       "Type": "Task",
       "Resource": "arn:aws:states:::lambda:invoke",
+      "Output": "{% $states.result.Payload.body %}",
       "Arguments": {
-        "FunctionName": "arn:aws:lambda:us-east-1:XXXXX:function:Decider:$LATEST",
+        "FunctionName": "arn:aws:lambda:us-east-1:XXXXXXXXXXX:function:OpenLibraryDecider:$LATEST",
         "Payload": "{% $states.input %}"
       },
       "Retry": [
@@ -48,21 +51,24 @@
           "JitterStrategy": "FULL"
         }
       ],
-      "Next": "Choice",
-      "Output": "{% $states.result.Payload.body %}"
+      "Next": "Choice"
     },
     "Choice": {
       "Type": "Choice",
       "Choices": [
         {
-          "Next": "Map",
-          "Condition": "{% $states.input.nextAction = \"SCRAPER_ONE\" %}"
+          "Next": "Pass",
+          "Condition": "{% $states.input.nextAction = \"COMPLETE\" %}"
         },
         {
-          "Next": "Finalize",
-          "Condition": "{% $states.input.nextAction = \"COMPLETE\" %}"
+          "Next": "Map",
+          "Condition": "{% $states.input.nextAction = \"FETCH\" %}"
         }
       ]
+    },
+    "Pass": {
+      "Type": "Pass",
+      "End": true
     },
     "Map": {
       "Type": "Map",
@@ -70,14 +76,15 @@
         "ProcessorConfig": {
           "Mode": "INLINE"
         },
-        "StartAt": "Scraper",
+        "StartAt": "Fetch",
         "States": {
-          "Scraper": {
+          "Fetch": {
             "Type": "Task",
             "Resource": "arn:aws:states:::lambda:invoke",
-            "Output": "{% $states.result.Payload %}",
+            "Output": "{% $states.result.Payload.body %}",
             "Arguments": {
-              "FunctionName": "arn:aws:lambda:us-east-1:XXXXX:function:Scraper:$LATEST"
+              "FunctionName": "arn:aws:lambda:us-east-1:XXXXXXXXXXX:function:OpenLibraryFetcher:$LATEST",
+              "Payload": "{% $states.input %}"
             },
             "Retry": [
               {
@@ -97,13 +104,9 @@
           }
         }
       },
-      "Next": "Decider",
+      "Items": "{% $states.input.fetchItems %}",
       "MaxConcurrency": 2,
-      "Items": "{% $states.input.subTasks %}"
-    },
-    "Finalize": {
-      "Type": "Pass",
-      "End": true
+      "Next": "Decider"
     }
   }
 }

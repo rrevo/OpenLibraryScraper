@@ -1,0 +1,35 @@
+{
+  "StateInput": {
+    "nextAction": "FETCH",
+    "fetchItems": [
+      {
+        "page": 2
+      },
+      {},
+      {}
+    ]
+  },
+  "StateOutput": [
+    {
+      "nextPage": 3,
+      "nextItems": [
+        {
+          "isbn": "9780936661384",
+          "title": "Into the West from the Lord of the Rings"
+        },
+        {
+          "isbn": "9781414312798",
+          "title": "Finding God in the Lord of the Rings"
+        }
+      ]
+    },
+    {
+      "nextPage": 0,
+      "nextItems": []
+    },
+    {
+      "nextPage": 0,
+      "nextItems": []
+    }
+  ]
+}

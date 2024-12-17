@@ -1,0 +1,43 @@
+{
+  "StateInput": {
+    "nextAction": "FETCH",
+    "fetchItems": [
+      {
+        "page": 1
+      },
+      {
+        "item": {
+          "isbn": "0739062751",
+          "title": "The Lord of the Rings Big Note"
+        }
+      },
+      {
+        "item": {
+          "isbn": "9780261103832",
+          "title": "The \"Lord of the Rings\" Sketchbook"
+        }
+      }
+    ]
+  },
+  "StateOutput": [
+    {
+      "nextPage": 2,
+      "nextItems": [
+        {
+          "isbn": "9780820463964",
+          "title": "Watching the Lord of the rings"
+        },
+        {
+          "isbn": "9780261103832",
+          "title": "The \"Lord of the Rings\" Sketchbook"
+        }
+      ]
+    },
+    {
+      "nextItems": []
+    },
+    {
+      "nextItems": []
+    }
+  ]
+}

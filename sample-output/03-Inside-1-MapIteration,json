@@ -1,0 +1,11 @@
+{
+  "StateInput": {
+    "item": {
+      "isbn": "0739062751",
+      "title": "The Lord of the Rings Big Note"
+    }
+  },
+  "StateOutput": {
+    "nextItems": []
+  }
+}

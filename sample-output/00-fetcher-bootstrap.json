@@ -1,0 +1,18 @@
+{
+  "StateInput": {
+    "page": 0
+  },
+  "StateOutput": {
+    "nextPage": 1,
+    "nextItems": [
+      {
+        "isbn": "0739062751",
+        "title": "The Lord of the Rings Big Note"
+      },
+      {
+        "isbn": "9780261103832",
+        "title": "The \"Lord of the Rings\" Sketchbook"
+      }
+    ]
+  }
+}

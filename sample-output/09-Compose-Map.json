@@ -1,0 +1,35 @@
+{
+  "StateInput": {
+    "nextAction": "FETCH",
+    "fetchItems": [
+      {
+        "page": 3
+      },
+      {},
+      {}
+    ]
+  },
+  "StateOutput": [
+    {
+      "nextPage": 0,
+      "nextItems": [
+        {
+          "isbn": "9798543313510",
+          "title": "Discover Distinct Cakes with the Lord of the Rings"
+        },
+        {
+          "isbn": "1974666921",
+          "title": "Notebook : The Lord of the Rings the Return of the King"
+        }
+      ]
+    },
+    {
+      "nextPage": 0,
+      "nextItems": []
+    },
+    {
+      "nextPage": 0,
+      "nextItems": []
+    }
+  ]
+}

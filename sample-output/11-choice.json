@@ -1,0 +1,10 @@
+{
+  "StateInput": {
+    "nextAction": "COMPLETE",
+    "fetchItems": []
+  },
+  "StateOutput": {
+    "nextAction": "COMPLETE",
+    "fetchItems": []
+  }
+}
