@@ -6,7 +6,7 @@ Demo project to build a entity scraper using [AWS Step Functions](https://aws.am
 
 ## Logic
 
-- During `Bootstrap`, a search is made to the [openlibrary project api](https://openlibrary.org/search.json?q=the+lord+of+the+rings). Additionally 2 random books are selected for download based on (isbn](https://openlibrary.org/isbn/0451137302.json)
+- During `Bootstrap`, a search is made to the [openlibrary project api](https://openlibrary.org/search.json?q=the+lord+of+the+rings). Additionally 2 random books are selected for download based on [isbn](https://openlibrary.org/isbn/0451137302.json)
 - `Decider` checks the next step of the scraper. Since the next page is needed, it should set the nextAction to `FETCH`.
 - The `Choice` state should move to the `Map` state.
 - `Fetch` is invoked for the next page along with the books.
